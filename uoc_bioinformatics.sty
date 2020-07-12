@@ -1,0 +1,74 @@
+\ProvidesPackage{uoc_bioinformatics}
+
+%So we can input files from the chapters folder
+\makeatletter
+\def\input@path{{./chapters/}}
+\makeatother
+
+\pdfminorversion=6
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+\usepackage{titling}
+\usepackage{indentfirst}
+\usepackage{pdfpages}
+\usepackage{csquotes}
+\usepackage{emptypage}
+\usepackage[USenglish]{babel}
+\usepackage{enumitem}
+\linespread{1.5}
+\usepackage[indent]{parskip}
+\raggedbottom      
+
+%Title configuration
+\usepackage[raggedright]{titlesec}
+\titleformat{\chapter}[display]
+  {\Huge\bfseries}
+  {}
+  {0pt}
+  {\thechapter.\ }
+
+\titleformat{name=\chapter,numberless}[display]
+  {\Huge\bfseries}
+  {}
+  {0pt}
+  {}
+
+%Header configuration
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+
+\fancyhead[RO, LE]{\slshape\nouppercase{\leftmark}}
+\fancyfoot[RO, LE]{\slshape{\thepage}}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+
+    \fancyhead[RO, LE]{\slshape\nouppercase{\leftmark}}
+    \fancyfoot[RO, LE]{\slshape{\thepage}}
+}
+\setlength{\headheight}{15pt}
+
+%Biblatex configuration
+\usepackage[
+    backend=biber,
+    style=nejm,
+    sorting=none
+    ]{biblatex}
+\addbibresource{references.bib}
+\AtEveryBibitem{
+  \clearfield{pubstate}
+  \clearfield{issue}
+  \clearfield{abstract}
+}
+\let\cite=\supercite
+
+%Glossaries configuration
+\usepackage[toc,acronym]{glossaries}
