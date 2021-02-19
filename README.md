@@ -1,7 +1,6 @@
-Transcriptome profiling and longitudinal cohort studies of
-myositis subsets
+# Transcriptome profiling and longitudinal cohort studies of myositis subsets
 
-Iago Pinal Fernández
+Author: Iago Pinal Fernández
 
 A thesis presented for the degree of Doctor of Philosophy in Bioinformatics
 
