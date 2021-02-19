@@ -4,3 +4,4 @@ old
 images
 *.pdf
 *.bak
+!phd_bioinformatics_ipf.pdf

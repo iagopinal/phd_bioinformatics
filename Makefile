@@ -10,12 +10,11 @@ all : $(ALL_FILES)
 	latexmk -pdf --output-directory=build $@.tex; \
 	cp build/$@.pdf $@.pdf;
 
-
 %.pdf: %.tex FORCE
 	latexmk -pdf -pvc --output-directory=build $<; cp build/$@ $@;
 
 FORCE:
-	
+
 clean :
 	rm -r build $(PDF_FILES)
 
